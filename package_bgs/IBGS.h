@@ -55,9 +55,16 @@ namespace bgslibrary
 				if (!config_xml.empty()) {
 					if (!std::ifstream(config_xml))
 						saveConfig();
-					loadConfig();
+					if(configExists(config_xml))
+						loadConfig();
 				}
 			}
+
+			inline bool configExists(const std::string& name) {
+				std::ifstream f(name.c_str());
+				return f.good();
+			}
+
 			void init(const cv::Mat &img_input, cv::Mat &img_outfg, cv::Mat &img_outbg) {
 				assert(img_input.empty() == false);
 				//img_outfg = cv::Mat::zeros(img_input.size(), img_input.type());
