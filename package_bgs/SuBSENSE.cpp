@@ -27,13 +27,11 @@ SuBSENSE::SuBSENSE() :
   nRequiredBGSamples(BGSSUBSENSE_DEFAULT_REQUIRED_NB_BG_SAMPLES),
   nSamplesForMovingAvgs(BGSSUBSENSE_DEFAULT_N_SAMPLES_FOR_MV_AVGS)
 {
-  std::cout << "SuBSENSE()" << std::endl;
 }
 
 SuBSENSE::~SuBSENSE() {
   if (pSubsense)
     delete pSubsense;
-  std::cout << "~SuBSENSE()" << std::endl;
 }
 
 void SuBSENSE::process(const cv::Mat &img_input, cv::Mat &img_output, cv::Mat &img_bgmodel)

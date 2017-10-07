@@ -21,14 +21,12 @@ using namespace bgslibrary::algorithms;
 LBFuzzyAdaptiveSOM::LBFuzzyAdaptiveSOM() :
   sensitivity(90), trainingSensitivity(240), learningRate(38), trainingLearningRate(255), trainingSteps(81)
 {
-  std::cout << "LBFuzzyAdaptiveSOM()" << std::endl;
   setup("./config/LBFuzzyAdaptiveSOM.xml");
 }
 
 LBFuzzyAdaptiveSOM::~LBFuzzyAdaptiveSOM()
 {
   delete m_pBGModel;
-  std::cout << "~LBFuzzyAdaptiveSOM()" << std::endl;
 }
 
 void LBFuzzyAdaptiveSOM::process(const cv::Mat &img_input, cv::Mat &img_output, cv::Mat &img_bgmodel)

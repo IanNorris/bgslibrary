@@ -21,14 +21,12 @@ using namespace bgslibrary::algorithms;
 LBFuzzyGaussian::LBFuzzyGaussian() :
   sensitivity(72), bgThreshold(162), learningRate(49), noiseVariance(195)
 {
-  std::cout << "LBFuzzyGaussian()" << std::endl;
   setup("./config/LBFuzzyGaussian.xml");
 }
 
 LBFuzzyGaussian::~LBFuzzyGaussian()
 {
   delete m_pBGModel;
-  std::cout << "~LBFuzzyGaussian()" << std::endl;
 }
 
 void LBFuzzyGaussian::process(const cv::Mat &img_input, cv::Mat &img_output, cv::Mat &img_bgmodel)

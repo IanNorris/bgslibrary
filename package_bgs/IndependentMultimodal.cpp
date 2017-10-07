@@ -20,14 +20,12 @@ using namespace bgslibrary::algorithms;
 
 IndependentMultimodal::IndependentMultimodal() : fps(10)
 {
-  std::cout << "IndependentMultimodal()" << std::endl;
   pIMBS = new BackgroundSubtractorIMBS(fps);
   setup("./config/IndependentMultimodal.xml");
 }
 
 IndependentMultimodal::~IndependentMultimodal()
 {
-  std::cout << "~IndependentMultimodal()" << std::endl;
   delete pIMBS;
 }
 

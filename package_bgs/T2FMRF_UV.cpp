@@ -21,13 +21,11 @@ using namespace bgslibrary::algorithms;
 T2FMRF_UV::T2FMRF_UV() :
   frameNumber(0), threshold(9.0), alpha(0.01), km(2.f), kv(0.9f), gaussians(3)
 {
-  std::cout << "T2FMRF_UV()" << std::endl;
   setup("./config/T2FMRF_UV.xml");
 }
 
 T2FMRF_UV::~T2FMRF_UV()
 {
-  std::cout << "~T2FMRF_UV()" << std::endl;
 }
 
 void T2FMRF_UV::process(const cv::Mat &img_input, cv::Mat &img_output, cv::Mat &img_bgmodel)

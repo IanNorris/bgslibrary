@@ -23,13 +23,11 @@ using namespace bgslibrary::algorithms;
 MixtureOfGaussianV1::MixtureOfGaussianV1() :
   alpha(0.05), enableThreshold(true), threshold(15)
 {
-  std::cout << "MixtureOfGaussianV1()" << std::endl;
   setup("./config/MixtureOfGaussianV1.xml");
 }
 
 MixtureOfGaussianV1::~MixtureOfGaussianV1()
 {
-  std::cout << "~MixtureOfGaussianV1()" << std::endl;
 }
 
 void MixtureOfGaussianV1::process(const cv::Mat &img_input, cv::Mat &img_output, cv::Mat &img_bgmodel)

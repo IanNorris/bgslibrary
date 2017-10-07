@@ -65,7 +65,6 @@ static char THIS_FILE[] = __FILE__;
 
 NPBGmodel::NPBGmodel()
 {
-  std::cout << "NPBGmodel()" << std::endl;
 }
 
 NPBGmodel::~NPBGmodel()
@@ -76,7 +75,6 @@ NPBGmodel::~NPBGmodel()
   delete TemporalMask;
   delete AccMask;
   //delete SDbinsImage;
-  std::cout << "~NPBGmodel()" << std::endl;
 }
 
 NPBGmodel::NPBGmodel(unsigned int Rows,
@@ -86,8 +84,6 @@ NPBGmodel::NPBGmodel(unsigned int Rows,
   unsigned int pTimeWindowSize,
   unsigned int bg_suppression_time)
 {
-  std::cout << "NPBGmodel()" << std::endl;
-
   imagesize = Rows*Cols*ColorChannels;
 
   rows = Rows;

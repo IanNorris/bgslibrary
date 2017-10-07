@@ -21,13 +21,11 @@ using namespace bgslibrary::algorithms;
 T2FGMM_UM::T2FGMM_UM() :
   frameNumber(0), threshold(9.0), alpha(0.01), km(1.5f), kv(0.6f), gaussians(3)
 {
-  std::cout << "T2FGMM_UM()" << std::endl;
   setup("./config/T2FGMM_UM.xml");
 }
 
 T2FGMM_UM::~T2FGMM_UM()
 {
-  std::cout << "~T2FGMM_UM()" << std::endl;
 }
 
 void T2FGMM_UM::process(const cv::Mat &img_input, cv::Mat &img_output, cv::Mat &img_bgmodel)

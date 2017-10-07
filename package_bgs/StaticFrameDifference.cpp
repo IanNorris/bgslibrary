@@ -21,13 +21,11 @@ using namespace bgslibrary::algorithms;
 StaticFrameDifference::StaticFrameDifference() :
   enableThreshold(true), threshold(15)
 {
-  std::cout << "StaticFrameDifference()" << std::endl;
   setup("./config/StaticFrameDifference.xml");
 }
 
 StaticFrameDifference::~StaticFrameDifference()
 {
-  std::cout << "~StaticFrameDifference()" << std::endl;
 }
 
 void StaticFrameDifference::process(const cv::Mat &img_input, cv::Mat &img_output, cv::Mat &img_bgmodel)

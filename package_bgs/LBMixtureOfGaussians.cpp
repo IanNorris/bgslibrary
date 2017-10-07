@@ -21,14 +21,12 @@ using namespace bgslibrary::algorithms;
 LBMixtureOfGaussians::LBMixtureOfGaussians() :
   sensitivity(81), bgThreshold(83), learningRate(59), noiseVariance(206)
 {
-  std::cout << "LBMixtureOfGaussians()" << std::endl;
   setup("./config/LBMixtureOfGaussians.xml");
 }
 
 LBMixtureOfGaussians::~LBMixtureOfGaussians()
 {
   delete m_pBGModel;
-  std::cout << "~LBMixtureOfGaussians()" << std::endl;
 }
 
 void LBMixtureOfGaussians::process(const cv::Mat &img_input, cv::Mat &img_output, cv::Mat &img_bgmodel)

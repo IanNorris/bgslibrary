@@ -25,7 +25,6 @@ using namespace bgslibrary::algorithms;
 LBP_MRF::LBP_MRF() :
   Detector(nullptr)
 {
-  std::cout << "LBP_MRF()" << std::endl;
   setup("./config/LBP_MRF.xml");
   Detector = new MotionDetection();
   Detector->SetMode(MotionDetection::md_LBPHistograms);
@@ -33,7 +32,6 @@ LBP_MRF::LBP_MRF() :
 
 LBP_MRF::~LBP_MRF()
 {
-  std::cout << "~LBP_MRF()" << std::endl;
   delete Detector;
   Detector = nullptr;
 }

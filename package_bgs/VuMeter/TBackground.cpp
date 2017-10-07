@@ -26,13 +26,11 @@ along with BGSLibrary.  If not, see <http://www.gnu.org/licenses/>.
 
 TBackground::TBackground(void)
 {
-  std::cout << "TBackground()" << std::endl;
 }
 
 TBackground::~TBackground(void)
 {
   Clear();
-  std::cout << "~TBackground()" << std::endl;
 }
 
 void TBackground::Clear(void)

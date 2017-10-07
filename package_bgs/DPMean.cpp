@@ -21,13 +21,11 @@ using namespace bgslibrary::algorithms;
 DPMean::DPMean() :
   frameNumber(0), threshold(2700), alpha(1e-6f), learningFrames(30)
 {
-  std::cout << "DPMean()" << std::endl;
   setup("./config/DPMean.xml");
 }
 
 DPMean::~DPMean()
 {
-  std::cout << "~DPMean()" << std::endl;
 }
 
 void DPMean::process(const cv::Mat &img_input, cv::Mat &img_output, cv::Mat &img_bgmodel)

@@ -23,13 +23,11 @@ PixelBasedAdaptiveSegmenter::PixelBasedAdaptiveSegmenter() :
   alpha(7.0), beta(1.0), N(20), Raute_min(2), R_incdec(0.05), R_lower(18),
   R_scale(5), T_dec(0.05), T_inc(1), T_init(18), T_lower(2), T_upper(200)
 {
-  std::cout << "PixelBasedAdaptiveSegmenter()" << std::endl;
   setup("./config/PixelBasedAdaptiveSegmenter.xml");
 }
 
 PixelBasedAdaptiveSegmenter::~PixelBasedAdaptiveSegmenter()
 {
-  std::cout << "~PixelBasedAdaptiveSegmenter()" << std::endl;
 }
 
 void PixelBasedAdaptiveSegmenter::process(const cv::Mat &img_input, cv::Mat &img_output, cv::Mat &img_bgmodel)

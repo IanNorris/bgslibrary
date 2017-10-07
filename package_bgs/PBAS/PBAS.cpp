@@ -18,8 +18,6 @@ along with BGSLibrary.  If not, see <http://www.gnu.org/licenses/>.
 
 PBAS::PBAS(void) : N(20), R_lower(18), Raute_min(2), T_lower(2), T_upper(200), R_scale(5), R_incdec(0.05), T_dec(0.05), T_inc(1)
 {
-  std::cout << "PBAS()" << std::endl;
-
   //feature vector
   alpha = 7.0;
   beta = 1.0;
@@ -77,8 +75,6 @@ void PBAS::newInitialization()
 
 PBAS::~PBAS(void)
 {
-  std::cout << "~PBAS()" << std::endl;
-
   randomN.clear();
   randomX.clear();
   randomY.clear();
@@ -125,7 +121,6 @@ bool PBAS::process(cv::Mat* input, cv::Mat* output)
 
     if (input->rows < 1 || input->cols < 1)
     {
-      std::cout << "Error: Occurrence of to small (or empty?) image size in PBAS. STOPPING " << std::endl;
       return false;
     }
   }

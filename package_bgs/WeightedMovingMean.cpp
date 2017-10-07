@@ -21,13 +21,11 @@ using namespace bgslibrary::algorithms;
 WeightedMovingMean::WeightedMovingMean() :
   enableWeight(true), enableThreshold(true), threshold(15)
 {
-  std::cout << "WeightedMovingMean()" << std::endl;
   setup("./config/WeightedMovingMean.xml");
 }
 
 WeightedMovingMean::~WeightedMovingMean()
 {
-  std::cout << "~WeightedMovingMean()" << std::endl;
 }
 
 void WeightedMovingMean::process(const cv::Mat &img_input, cv::Mat &img_output, cv::Mat &img_bgmodel)

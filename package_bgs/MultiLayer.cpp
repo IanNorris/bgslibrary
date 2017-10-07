@@ -22,14 +22,12 @@ MultiLayer::MultiLayer() :
   frameNumber(0), saveModel(false), disableDetectMode(true), disableLearning(false),
   detectAfter(0), bg_model_preload(""), loadDefaultParams(true)
 {
-  std::cout << "MultiLayer()" << std::endl;
   setup("./config/MultiLayer.xml");
 }
 
 MultiLayer::~MultiLayer()
 {
   finish();
-  std::cout << "~MultiLayer()" << std::endl;
 }
 
 void MultiLayer::setStatus(Status _status)
@@ -47,7 +45,6 @@ void MultiLayer::finish()
 
   if (status == MLBGS_LEARN && saveModel == true)
   {
-    std::cout << "MultiLayer saving background model: " << bg_model_preload << std::endl;
     BGS->Save(bg_model_preload.c_str());
   }
 
@@ -71,12 +68,6 @@ void MultiLayer::process(const cv::Mat &img_input, cv::Mat &img_output, cv::Mat 
     if (disableDetectMode)
       status = MLBGS_LEARN;
 
-    if (status == MLBGS_LEARN)
-      std::cout << "MultiLayer in LEARN mode" << std::endl;
-
-    if (status == MLBGS_DETECT)
-      std::cout << "MultiLayer in DETECT mode" << std::endl;
-
     org_img = new IplImage(img_input);
 
     fg_img = cvCreateImage(img_size, org_img->depth, org_img->nChannels);
@@ -93,24 +84,16 @@ void MultiLayer::process(const cv::Mat &img_input, cv::Mat &img_output, cv::Mat 
 
     if (bg_model_preload.empty() == false)
     {
-      std::cout << "MultiLayer loading background model: " << bg_model_preload << std::endl;
       BGS->Load(bg_model_preload.c_str());
     }
 
     if (status == MLBGS_DETECT)
     {
       BGS->m_disableLearning = disableLearning;
-
-      if (disableLearning)
-        std::cout << "MultiLayer disabled learning in DETECT mode" << std::endl;
-      else
-        std::cout << "MultiLayer enabled learning in DETECT mode" << std::endl;
     }
 
     if (loadDefaultParams)
     {
-      std::cout << "MultiLayer loading default params" << std::endl;
-
       max_mode_num = 5;
       weight_updating_constant = 5.0;
       texture_weight = 0.5;
@@ -126,8 +109,6 @@ void MultiLayer::process(const cv::Mat &img_input, cv::Mat &img_output, cv::Mat 
       bilater_filter_sigma_s = 3.0f;
       bilater_filter_sigma_r = 0.1f;
     }
-    else
-      std::cout << "MultiLayer loading config params" << std::endl;
 
     BGS->m_nMaxLBPModeNum = max_mode_num;
     BGS->m_fWeightUpdatingConstant = weight_updating_constant;
@@ -196,8 +177,6 @@ void MultiLayer::process(const cv::Mat &img_input, cv::Mat &img_output, cv::Mat 
 
   if (detectAfter > 0 && detectAfter == frameNumber)
   {
-    std::cout << "MultiLayer in DETECT mode" << std::endl;
-
     status = MLBGS_DETECT;
 
     mode_learn_rate_per_second = 0.01f;
@@ -207,11 +186,6 @@ void MultiLayer::process(const cv::Mat &img_input, cv::Mat &img_output, cv::Mat 
     BGS->SetParameters(max_mode_num, mode_learn_rate_per_second, weight_learn_rate_per_second, init_mode_weight);
 
     BGS->m_disableLearning = disableLearning;
-
-    if (disableLearning)
-      std::cout << "MultiLayer disabled learning in DETECT mode" << std::endl;
-    else
-      std::cout << "MultiLayer enabled learning in DETECT mode" << std::endl;
   }
 
   IplImage* img = new IplImage(img_input);

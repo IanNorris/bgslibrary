@@ -23,7 +23,6 @@ KDE::KDE() :
   th(10e-8), alpha(0.3), framesToLearn(10), frameNumber(0)
 {
   p = new NPBGSubtractor;
-  std::cout << "KDE()" << std::endl;
   setup("./config/KDE.xml");
 }
 
@@ -31,7 +30,6 @@ KDE::~KDE()
 {
   delete FGImage;
   delete p;
-  std::cout << "~KDE()" << std::endl;
 }
 
 void KDE::process(const cv::Mat &img_input, cv::Mat &img_output, cv::Mat &img_bgmodel)

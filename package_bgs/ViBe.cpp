@@ -26,14 +26,12 @@ ViBe::ViBe() :
   updateFactor(DEFAULT_UPDATE_FACTOR),
   model(nullptr)
 {
-  std::cout << "ViBe()" << std::endl;
   model = libvibeModel_Sequential_New();
   setup("./config/ViBe.xml");
 }
 
 ViBe::~ViBe()
 {
-  std::cout << "~ViBe()" << std::endl;
   libvibeModel_Sequential_Free(model);
 }
 

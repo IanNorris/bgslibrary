@@ -724,8 +724,6 @@ void BackgroundSubtractorIMBS::filterFg() {
 
 void BackgroundSubtractorIMBS::changeBg() {
 
-  std::cout << "\n\n\n\nWARNING: changeBg\n\n\n\n\n" << std::endl;
-
   //samplingPeriod /= 2.;
   //numSamples /= 2.;
   //bg_reset = true;

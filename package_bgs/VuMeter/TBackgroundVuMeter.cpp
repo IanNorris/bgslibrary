@@ -33,13 +33,11 @@ TBackgroundVuMeter::TBackgroundVuMeter(void)
   , m_fAlpha(0.995)
   , m_fThreshold(0.03)
 {
-  std::cout << "TBackgroundVuMeter()" << std::endl;
 }
 
 TBackgroundVuMeter::~TBackgroundVuMeter(void)
 {
   Clear();
-  std::cout << "~TBackgroundVuMeter()" << std::endl;
 }
 
 void TBackgroundVuMeter::Clear(void)

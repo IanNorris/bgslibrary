@@ -21,14 +21,12 @@ using namespace bgslibrary::algorithms;
 LBAdaptiveSOM::LBAdaptiveSOM() :
   sensitivity(75), trainingSensitivity(245), learningRate(62), trainingLearningRate(255), trainingSteps(55)
 {
-  std::cout << "LBAdaptiveSOM()" << std::endl;
   setup("./config/LBAdaptiveSOM.xml");
 }
 
 LBAdaptiveSOM::~LBAdaptiveSOM()
 {
   delete m_pBGModel;
-  std::cout << "~LBAdaptiveSOM()" << std::endl;
 }
 
 void LBAdaptiveSOM::process(const cv::Mat &img_input, cv::Mat &img_output, cv::Mat &img_bgmodel)

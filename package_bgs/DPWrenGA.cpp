@@ -21,13 +21,11 @@ using namespace bgslibrary::algorithms;
 DPWrenGA::DPWrenGA() :
   frameNumber(0), threshold(12.25f), alpha(0.005f), learningFrames(30)
 {
-  std::cout << "DPWrenGA()" << std::endl;
   setup("./config/DPWrenGA.xml");
 }
 
 DPWrenGA::~DPWrenGA()
 {
-  std::cout << "~DPWrenGA()" << std::endl;
 }
 
 void DPWrenGA::process(const cv::Mat &img_input, cv::Mat &img_output, cv::Mat &img_bgmodel)

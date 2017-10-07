@@ -21,13 +21,11 @@ using namespace bgslibrary::algorithms;
 DPPratiMediod::DPPratiMediod() :
   frameNumber(0), threshold(30), samplingRate(5), historySize(16), weight(5)
 {
-  std::cout << "DPPratiMediod()" << std::endl;
   setup("./config/DPPratiMediod.xml");
 }
 
 DPPratiMediod::~DPPratiMediod()
 {
-  std::cout << "~DPPratiMediod()" << std::endl;
 }
 
 void DPPratiMediod::process(const cv::Mat &img_input, cv::Mat &img_output, cv::Mat &img_bgmodel)

@@ -21,13 +21,11 @@ using namespace bgslibrary::algorithms;
 FrameDifference::FrameDifference() :
   enableThreshold(true), threshold(15)
 {
-  std::cout << "FrameDifference()" << std::endl;
   setup("./config/FrameDifference.xml");
 }
 
 FrameDifference::~FrameDifference()
 {
-  std::cout << "~FrameDifference()" << std::endl;
 }
 
 void FrameDifference::process(const cv::Mat &img_input, cv::Mat &img_output, cv::Mat &img_bgmodel)

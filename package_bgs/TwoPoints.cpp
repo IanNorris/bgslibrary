@@ -23,7 +23,6 @@ TwoPoints::TwoPoints() :
   matchingThreshold(DEFAULT_MATCH_THRESH),
   updateFactor(DEFAULT_UPDATE_FACTOR), model(nullptr)
 {
-  std::cout << "TwoPoints()" << std::endl;
   //model = static_cast<twopointsModel_t*>(libtwopointsModel_New());
   model = libtwopointsModel_New();
   setup("./config/TwoPoints.xml");
@@ -31,7 +30,6 @@ TwoPoints::TwoPoints() :
 
 TwoPoints::~TwoPoints()
 {
-  std::cout << "~TwoPoints()" << std::endl;
   libtwopointsModel_Free(model);
 }
 

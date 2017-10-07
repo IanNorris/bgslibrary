@@ -22,13 +22,11 @@ FuzzySugenoIntegral::FuzzySugenoIntegral() :
   frameNumber(0), framesToLearn(10), alphaLearn(0.1), alphaUpdate(0.01),
   colorSpace(1), option(2), smooth(true), threshold(0.67)
 {
-  std::cout << "FuzzySugenoIntegral()" << std::endl;
   setup("./config/FuzzySugenoIntegral.xml");
 }
 
 FuzzySugenoIntegral::~FuzzySugenoIntegral()
 {
-  std::cout << "~FuzzySugenoIntegral()" << std::endl;
 }
 
 void FuzzySugenoIntegral::process(const cv::Mat &img_input, cv::Mat &img_output, cv::Mat &img_bgmodel)
@@ -38,31 +36,8 @@ void FuzzySugenoIntegral::process(const cv::Mat &img_input, cv::Mat &img_output,
   cv::Mat img_input_f3(img_input.size(), CV_32F);
   img_input.convertTo(img_input_f3, CV_32F, 1. / 255.);
 
-  if (firstTime)
-  {
-    std::cout << "FuzzySugenoIntegral parameters:" << std::endl;
-
-    std::string colorSpaceName = "";
-    switch (colorSpace)
-    {
-    case 1: colorSpaceName = "RGB";  break;
-    case 2: colorSpaceName = "OHTA"; break;
-    case 3: colorSpaceName = "HSV";  break;
-    case 4: colorSpaceName = "YCrCb"; break;
-    }
-    std::cout << "Color space: " << colorSpaceName << std::endl;
-
-    if (option == 1)
-      std::cout << "Fuzzing by 3 color components" << std::endl;
-    if (option == 2)
-      std::cout << "Fuzzing by 2 color components + 1 texture component" << std::endl;
-  }
-
   if (frameNumber <= framesToLearn)
   {
-    if (frameNumber == 0)
-      std::cout << "FuzzySugenoIntegral initializing background model by adaptive learning..." << std::endl;
-
     if (img_background_f3.empty())
       img_input_f3.copyTo(img_background_f3);
     else
@@ -154,9 +129,6 @@ void FuzzySugenoIntegral::process(const cv::Mat &img_input, cv::Mat &img_output,
       cv::imshow("SI FG Mask", img_foreground);
     }
 #endif
-
-    if (frameNumber == (framesToLearn + 1))
-      std::cout << "FuzzySugenoIntegral updating background model by adaptive-selective learning..." << std::endl;
 
     IplImage* updated_background_f3 = cvCreateImage(cvSize(input_f1->width, input_f1->height), IPL_DEPTH_32F, 3);
     cvSetZero(updated_background_f3);

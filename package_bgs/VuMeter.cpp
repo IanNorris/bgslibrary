@@ -21,7 +21,6 @@ using namespace bgslibrary::algorithms;
 VuMeter::VuMeter() :
   enableFilter(true), binSize(8), alpha(0.995), threshold(0.03)
 {
-  std::cout << "VuMeter()" << std::endl;
   setup("./config/VuMeter.xml");
 }
 
@@ -30,8 +29,6 @@ VuMeter::~VuMeter()
   cvReleaseImage(&mask);
   cvReleaseImage(&background);
   cvReleaseImage(&gray);
-
-  std::cout << "~VuMeter()" << std::endl;
 }
 
 void VuMeter::process(const cv::Mat &img_input, cv::Mat &img_output, cv::Mat &img_bgmodel)

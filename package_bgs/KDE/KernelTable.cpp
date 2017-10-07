@@ -53,20 +53,16 @@ along with BGSLibrary.  If not, see <http://www.gnu.org/licenses/>.
 
 KernelLUTable::KernelLUTable()
 {
-  std::cout << "KernelLUTable()" << std::endl;
 }
 
 KernelLUTable::~KernelLUTable()
 {
   delete kerneltable;
   delete kernelsums;
-  std::cout << "~KernelLUTable()" << std::endl;
 }
 
 KernelLUTable::KernelLUTable(int KernelHalfWidth, double Segmamin, double Segmamax, int Segmabins)
 {
-  std::cout << "KernelLUTable()" << std::endl;
-
   double C1, C2, v, segma, sum;
   int bin, b;
 

@@ -25,14 +25,12 @@ nMinColorDistThreshold(BGSPAWCS_DEFAULT_MIN_COLOR_DIST_THRESHOLD),
 nMaxNbWords(BGSPAWCS_DEFAULT_MAX_NB_WORDS),
 nSamplesForMovingAvgs(BGSPAWCS_DEFAULT_N_SAMPLES_FOR_MV_AVGS)
 {
-  std::cout << "PAWCS()" << std::endl;
   setup("./config/PAWCS.xml");
 }
 PAWCS::~PAWCS()
 {
   if (pPAWCS)
     delete pPAWCS;
-  std::cout << "~PAWCS()" << std::endl;
 }
 
 void PAWCS::process(const cv::Mat &img_input, cv::Mat &img_output, cv::Mat &img_bgmodel)

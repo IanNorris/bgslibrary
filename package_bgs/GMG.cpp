@@ -22,7 +22,6 @@ using namespace bgslibrary::algorithms;
 
 GMG::GMG() : initializationFrames(20), decisionThreshold(0.7)
 {
-  std::cout << "GMG()" << std::endl;
   setup("./config/GMG.xml");
 
   cv::initModule_video();
@@ -34,7 +33,6 @@ GMG::GMG() : initializationFrames(20), decisionThreshold(0.7)
 
 GMG::~GMG()
 {
-  std::cout << "~GMG()" << std::endl;
 }
 
 void GMG::process(const cv::Mat &img_input, cv::Mat &img_output, cv::Mat &img_bgmodel)

@@ -21,13 +21,11 @@ using namespace bgslibrary::algorithms;
 T2FMRF_UM::T2FMRF_UM() :
   frameNumber(0), threshold(9.0), alpha(0.01), km(2.f), kv(0.9f), gaussians(3)
 {
-  std::cout << "T2FMRF_UM()" << std::endl;
   setup("./config/DPMean.xml");
 }
 
 T2FMRF_UM::~T2FMRF_UM()
 {
-  std::cout << "~T2FMRF_UM()" << std::endl;
 }
 
 void T2FMRF_UM::process(const cv::Mat &img_input, cv::Mat &img_output, cv::Mat &img_bgmodel)

@@ -27,7 +27,6 @@ LOBSTER::LOBSTER() :
   nBGSamples(BGSLOBSTER_DEFAULT_NB_BG_SAMPLES),
   nRequiredBGSamples(BGSLOBSTER_DEFAULT_REQUIRED_NB_BG_SAMPLES)
 {
-  std::cout << "LOBSTER()" << std::endl;
   setup("./config/LOBSTER.xml");
 }
 
@@ -35,7 +34,6 @@ LOBSTER::~LOBSTER()
 {
   if (pLOBSTER)
     delete pLOBSTER;
-  std::cout << "~LOBSTER()" << std::endl;
 }
 
 void LOBSTER::process(const cv::Mat &img_input, cv::Mat &img_output, cv::Mat &img_bgmodel)

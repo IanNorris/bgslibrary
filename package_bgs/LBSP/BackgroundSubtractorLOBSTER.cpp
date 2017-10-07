@@ -52,7 +52,9 @@ void BackgroundSubtractorLOBSTER::initialize(const cv::Mat& oInitImg, const cv::
     std::vector<cv::Mat> voInitImgChannels;
     cv::split(oInitImg, voInitImgChannels);
     if (!cv::countNonZero((voInitImgChannels[0] != voInitImgChannels[1]) | (voInitImgChannels[2] != voInitImgChannels[1])))
-      std::cout << std::endl << "\tBackgroundSubtractorLOBSTER : Warning, grayscale images should always be passed in CV_8UC1 format for optimal performance." << std::endl;
+    {
+     // std::cout << std::endl << "\tBackgroundSubtractorLOBSTER : Warning, grayscale images should always be passed in CV_8UC1 format for optimal performance." << std::endl;
+    }
   }
   cv::Mat oNewBGROI;
   if (oROI.empty() && (m_oROI.empty() || oROI.size() != oInitImg.size())) {

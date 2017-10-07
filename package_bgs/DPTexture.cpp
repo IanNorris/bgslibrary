@@ -21,7 +21,6 @@ using namespace bgslibrary::algorithms;
 DPTexture::DPTexture()
 // : enableFiltering(true)
 {
-  std::cout << "DPTexture()" << std::endl;
   setup("./config/DPTexture.xml");
 }
 
@@ -36,7 +35,6 @@ DPTexture::~DPTexture()
   fgMask.ReleaseImage();
   tempMask.ReleaseImage();
   texture.ReleaseImage();
-  std::cout << "~DPTexture()" << std::endl;
 }
 
 void DPTexture::process(const cv::Mat &img_input, cv::Mat &img_output, cv::Mat &img_bgmodel)

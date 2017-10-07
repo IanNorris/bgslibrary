@@ -21,13 +21,11 @@ using namespace bgslibrary::algorithms;
 DPAdaptiveMedian::DPAdaptiveMedian() :
   frameNumber(0), threshold(40), samplingRate(7), learningFrames(30)
 {
-  std::cout << "DPAdaptiveMedian()" << std::endl;
   setup("./config/DPAdaptiveMedian.xml");
 }
 
 DPAdaptiveMedian::~DPAdaptiveMedian()
 {
-  std::cout << "~DPAdaptiveMedian()" << std::endl;
 }
 
 void DPAdaptiveMedian::process(const cv::Mat &img_input, cv::Mat &img_output, cv::Mat &img_bgmodel)

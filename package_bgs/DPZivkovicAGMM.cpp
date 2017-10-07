@@ -21,13 +21,11 @@ using namespace bgslibrary::algorithms;
 DPZivkovicAGMM::DPZivkovicAGMM() :
   frameNumber(0), threshold(25.0f), alpha(0.001f), gaussians(3)
 {
-  std::cout << "DPZivkovicAGMM()" << std::endl;
   setup("./config/DPZivkovicAGMM.xml");
 }
 
 DPZivkovicAGMM::~DPZivkovicAGMM()
 {
-  std::cout << "~DPZivkovicAGMM()" << std::endl;
 }
 
 void DPZivkovicAGMM::process(const cv::Mat &img_input, cv::Mat &img_output, cv::Mat &img_bgmodel)

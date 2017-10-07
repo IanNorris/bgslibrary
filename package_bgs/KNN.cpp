@@ -24,13 +24,11 @@ KNN::KNN() :
   history(500), nSamples(7), dist2Threshold(20.0f * 20.0f), knnSamples(0),
   doShadowDetection(true), shadowValue(127), shadowThreshold(0.5f)
 {
-  std::cout << "KNN()" << std::endl;
   setup("./config/KNN.xml");
 }
 
 KNN::~KNN()
 {
-  std::cout << "~KNN()" << std::endl;
 }
 
 void KNN::process(const cv::Mat &img_input, cv::Mat &img_output, cv::Mat &img_bgmodel)

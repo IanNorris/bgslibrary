@@ -21,13 +21,11 @@ using namespace bgslibrary::algorithms;
 WeightedMovingVariance::WeightedMovingVariance() :
   enableWeight(true), enableThreshold(true), threshold(15)
 {
-  std::cout << "WeightedMovingVariance()" << std::endl;
   setup("./config/WeightedMovingVariance.xml");
 }
 
 WeightedMovingVariance::~WeightedMovingVariance()
 {
-  std::cout << "~WeightedMovingVariance()" << std::endl;
 }
 
 void WeightedMovingVariance::process(const cv::Mat &img_input, cv::Mat &img_output, cv::Mat &img_bgmodel)

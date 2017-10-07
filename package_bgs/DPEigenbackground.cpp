@@ -21,13 +21,11 @@ using namespace bgslibrary::algorithms;
 DPEigenbackground::DPEigenbackground() :
   frameNumber(0), threshold(225), historySize(20), embeddedDim(10)
 {
-  std::cout << "DPEigenbackground()" << std::endl;
   setup("./config/DPEigenbackground.xml");
 }
 
 DPEigenbackground::~DPEigenbackground()
 {
-  std::cout << "~DPEigenbackground()" << std::endl;
 }
 
 void DPEigenbackground::process(const cv::Mat &img_input, cv::Mat &img_output, cv::Mat &img_bgmodel)

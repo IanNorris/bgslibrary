@@ -21,7 +21,6 @@ using namespace bgslibrary::algorithms;
 
 Amber::Amber() : model(nullptr)
 {
-  std::cout << "Amber()" << std::endl;
   /* Initialization of the Amber model */
   model = libamberModelNew();
   setup("./config/Amber.xml");
@@ -29,7 +28,6 @@ Amber::Amber() : model(nullptr)
 
 Amber::~Amber()
 {
-  std::cout << "~Amber()" << std::endl;
   libamberModelFree(model);
 }
 
@@ -46,7 +44,6 @@ void Amber::process(const cv::Mat &img_input, cv::Mat &img_output, cv::Mat &img_
 
   if (img_input.channels() != 3)
   {
-    std::cout << "Only works for 3 channels images. Sorry for that" << std::endl;
     return;
   }
 

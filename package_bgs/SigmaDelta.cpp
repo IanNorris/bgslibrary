@@ -22,14 +22,12 @@ SigmaDelta::SigmaDelta() :
   ampFactor(1), minVar(15), maxVar(255), algorithm(sdLaMa091New())
 {
   applyParams();
-  std::cout << "SigmaDelta()" << std::endl;
   setup("./config/SigmaDelta.xml");
 }
 
 SigmaDelta::~SigmaDelta()
 {
   sdLaMa091Free(algorithm);
-  std::cout << "~SigmaDelta()" << std::endl;
 }
 
 void SigmaDelta::process(const cv::Mat &img_input, cv::Mat &img_output, cv::Mat &img_bgmodel)

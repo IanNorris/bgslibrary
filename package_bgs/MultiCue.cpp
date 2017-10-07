@@ -62,14 +62,12 @@ MultiCue::MultiCue()
   g_bModelMemAllocated = FALSE;									//To handle memory..
   g_bNonModelMemAllocated = FALSE;								//To handle memory..
 
-  std::cout << "MultiCue()" << std::endl;
   setup("./config/MultiCue.xml");
 }
 
 MultiCue::~MultiCue(void)
 {
   Destroy();
-  std::cout << "~MultiCue()" << std::endl;
 }
 
 //-----------------------------------------------------------------------------------------------------------------------------------------//

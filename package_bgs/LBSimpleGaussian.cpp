@@ -21,14 +21,12 @@ using namespace bgslibrary::algorithms;
 LBSimpleGaussian::LBSimpleGaussian() :
   sensitivity(66), noiseVariance(162), learningRate(18)
 {
-  std::cout << "LBSimpleGaussian()" << std::endl;
   setup("./config/LBSimpleGaussian.xml");
 }
 
 LBSimpleGaussian::~LBSimpleGaussian()
 {
   delete m_pBGModel;
-  std::cout << "~LBSimpleGaussian()" << std::endl;
 }
 
 void LBSimpleGaussian::process(const cv::Mat &img_input, cv::Mat &img_output, cv::Mat &img_bgmodel)

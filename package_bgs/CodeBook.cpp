@@ -21,13 +21,11 @@ using namespace bgslibrary::algorithms;
 CodeBook::CodeBook() :
   t(0), learningFrames(DEFAULT_LEARNFRAMES), alpha(DEFAULT_ALPHA), beta(DEFAULT_BETA)
 {
-  std::cout << "CodeBook()" << std::endl;
   setup("./config/CodeBook.xml");
 }
 
 CodeBook::~CodeBook()
 {
-  std::cout << "~CodeBook()" << std::endl;
 }
 
 void CodeBook::process(const cv::Mat &img_input, cv::Mat &img_output, cv::Mat &img_bgmodel)

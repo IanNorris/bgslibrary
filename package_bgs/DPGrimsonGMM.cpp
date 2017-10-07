@@ -21,13 +21,11 @@ using namespace bgslibrary::algorithms;
 DPGrimsonGMM::DPGrimsonGMM() :
   frameNumber(0), threshold(9.0), alpha(0.01), gaussians(3)
 {
-  std::cout << "DPGrimsonGMM()" << std::endl;
   setup("./config/DPGrimsonGMM.xml");
 }
 
 DPGrimsonGMM::~DPGrimsonGMM()
 {
-  std::cout << "~DPGrimsonGMM()" << std::endl;
 }
 
 void DPGrimsonGMM::process(const cv::Mat &img_input, cv::Mat &img_output, cv::Mat &img_bgmodel)
